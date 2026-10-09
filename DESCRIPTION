@@ -1,0 +1,12 @@
+Package: bigtenperf
+Title: Tools for Big Ten Football Performance Data
+Version: 0.0.0.9000
+Authors@R: person("Jaxon", "Hill", role = c("aut", "cre"))
+Description: Imports cached PFF college football season extracts and prepares
+    player- and team-level offensive grades for analysis.
+License: MIT
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    utils
