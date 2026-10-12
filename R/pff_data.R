@@ -22,6 +22,14 @@
 #'   PFF columns and a `revenue_sharing_era` column (`"pre_direct_sharing"` or
 #'   `"direct_sharing"`). The source file and data level are also recorded as
 #'   attributes.
+#' @examples
+#' # Synthetic sample extracts bundled with the package (not real PFF data)
+#' sample_dir <- system.file("extdata", package = "bigtenperf")
+#' players <- get_pff_season(2024, level = "player", data_dir = sample_dir)
+#' players[, c("season", "team", "player", "revenue_sharing_era")]
+#'
+#' teams <- get_pff_season(2023:2025, level = "team", data_dir = sample_dir)
+#' table(teams$season, teams$revenue_sharing_era)
 #' @export
 get_pff_season <- function(season,
                            level = c("player", "team"),
@@ -106,6 +114,14 @@ get_pff_season <- function(season,
 #'   `offense_grade`, and numeric `offense_snaps` columns, plus the original
 #'   fields. For team-level data, `offense_snaps` is `NA` because the team-grade
 #'   extract does not report a corresponding team snap count.
+#' @examples
+#' sample_dir <- system.file("extdata", package = "bigtenperf")
+#' players <- get_pff_season(2023:2025, level = "player", data_dir = sample_dir)
+#' offense <- clean_pff_offense(players, min_snaps = 10)
+#' offense[, c("season", "player", "position", "offense_grade", "offense_snaps")]
+#'
+#' teams <- get_pff_season(2025, level = "team", data_dir = sample_dir)
+#' clean_pff_offense(teams)[, c("team", "offense_level", "offense_grade")]
 #' @export
 clean_pff_offense <- function(data, min_snaps = 0) {
   if (!is.data.frame(data)) {

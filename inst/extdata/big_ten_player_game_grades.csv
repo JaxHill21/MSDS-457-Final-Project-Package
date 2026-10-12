@@ -1,0 +1,10 @@
+season,week,game_id,school_id,team,player_id,player,position,unit,offense,overall_snaps
+2023,1,g101,michigan,MICHIGAN,p1,Example QB A,qb,offense,78.4,65
+2023,1,g101,michigan,MICHIGAN,p2,Example LB A,lb,defense,,58
+2023,1,g101,,EAST CAROLINA,p3,Example WR B,wr,offense,61.2,52
+2023,2,g102,oregon,OREGON,p4,Example RB C,hb,offense,70.1,40
+2024,1,g201,oregon,OREGON,p4,Example RB C,hb,offense,74.9,44
+2024,1,g201,oregon,OREGON,p5,Example TE C,te,offense,55.0,3
+2024,2,g202,ohio-state,OHIO STATE,p6,Example WR D,wr,offense,82.3,60
+2025,1,g301,ohio-state,OHIO STATE,p6,Example WR D,wr,offense,85.6,62
+2025,1,g301,ohio-state,OHIO STATE,p7,Example CB D,cb,defense,,55

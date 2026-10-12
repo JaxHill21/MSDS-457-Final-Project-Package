@@ -227,3 +227,15 @@ data/
 ~$*
 .Rhistory
 .Rproj.user/
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rcheck/
+bigtenperf_*.tar.gz
+
+# OS / Office
+.DS_Store
+~$*

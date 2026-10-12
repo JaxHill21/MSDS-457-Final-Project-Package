@@ -1,13 +1,18 @@
-# MSDS-457-Final-Project-Package
-
-# Big Ten Football Performance Tools
+# bigtenperf: Big Ten Football Performance Tools
 
 This project is an R package prototype for importing and preparing authorized
 PFF college football performance data for Big Ten analysis. Raw data are not
 included. Keep PFF credentials and restricted source files outside version
 control.
 
-## First functions
+## Installation
+
+```r
+# install.packages("devtools")
+devtools::install_github("JaxHill21/MSDS-457-Final-Project-Package")
+```
+
+## Functions
 
 `get_pff_season()` reads the provided cached PFF player-game or team-game grade
 table and filters it to requested season(s). It keeps the teams that were Big
@@ -40,3 +45,27 @@ Big Ten `school_id` are excluded; set `include_opponents = TRUE` to retain
 opponents in the source file. The supplied 2026 season is in progress and is
 not directly comparable to completed seasons without accounting for its
 partial schedule.
+
+## Sample data
+
+The package ships two small synthetic CSVs in `inst/extdata` that mimic the
+layout of the PFF extracts. They are made-up values used only for the examples
+and tests:
+
+```r
+library(bigtenperf)
+sample_dir <- system.file("extdata", package = "bigtenperf")
+players <- get_pff_season(2023:2025, level = "player", data_dir = sample_dir)
+clean_pff_offense(players, min_snaps = 10)
+```
+
+## Development
+
+Documentation is generated with roxygen2 and the package is checked with
+devtools:
+
+```r
+devtools::document()
+devtools::test()
+devtools::check()
+```
