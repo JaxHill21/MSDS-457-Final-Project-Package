@@ -5,6 +5,6 @@ season,week,game_id,school_id,team,player_id,player,position,unit,offense,overal
 2023,2,g102,oregon,OREGON,p4,Example RB C,hb,offense,70.1,40
 2024,1,g201,oregon,OREGON,p4,Example RB C,hb,offense,74.9,44
 2024,1,g201,oregon,OREGON,p5,Example TE C,te,offense,55.0,3
-2024,2,g202,ohio-state,OHIO STATE,p6,Example WR D,wr,offense,82.3,60
-2025,1,g301,ohio-state,OHIO STATE,p6,Example WR D,wr,offense,85.6,62
-2025,1,g301,ohio-state,OHIO STATE,p7,Example CB D,cb,defense,,55
+2024,2,g202,ohio_state,OHIO STATE,p6,Example WR D,wr,offense,82.3,60
+2025,1,g301,ohio_state,OHIO STATE,p6,Example WR D,wr,offense,85.6,62
+2025,1,g301,ohio_state,OHIO STATE,p7,Example CB D,cb,defense,,55

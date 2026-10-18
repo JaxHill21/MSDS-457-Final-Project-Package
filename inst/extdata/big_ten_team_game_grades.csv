@@ -3,5 +3,5 @@ season,week,game_id,school_id,team,team_id,offense
 2023,1,g101,,EAST CAROLINA,t9,52.4
 2023,2,g102,oregon,OREGON,t2,71.3
 2024,1,g201,oregon,OREGON,t2,73.8
-2024,2,g202,ohio-state,OHIO STATE,t3,84.1
-2025,1,g301,ohio-state,OHIO STATE,t3,86.2
+2024,2,g202,ohio_state,OHIO STATE,t3,84.1
+2025,1,g301,ohio_state,OHIO STATE,t3,86.2

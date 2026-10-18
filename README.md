@@ -46,6 +46,20 @@ opponents in the source file. The supplied 2026 season is in progress and is
 not directly comparable to completed seasons without accounting for its
 partial schedule.
 
+## Dataset
+
+`big_ten_roster_profiles` summarizes the football rosters posted on each Big Ten
+school's athletics site, one row per school per season for 2014-2026 (231 rows).
+It covers roster size, average height and weight, class-year makeup, in-state
+share and the share of players listing a previous school. It contains
+school-level summaries only, with no individual player data. See
+`?big_ten_roster_profiles` for definitions and caveats, and
+`data-raw/big_ten_roster_profiles.R` for how it was built.
+
+```r
+str(big_ten_roster_profiles)
+```
+
 ## Sample data
 
 The package ships two small synthetic CSVs in `inst/extdata` that mimic the

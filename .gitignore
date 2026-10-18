@@ -217,8 +217,10 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Local project data and credentials
-data/
+# Local project data and credentials (package datasets in data/ are allowed
+# one by one; raw extracts stay out)
+data/*
+!data/big_ten_roster_profiles.rda
 .env
 .env.*
 
