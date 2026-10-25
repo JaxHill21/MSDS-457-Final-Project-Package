@@ -241,3 +241,7 @@ bigtenperf_*.tar.gz
 # OS / Office
 .DS_Store
 ~$*
+
+# Checkpoint figures built from PFF grades stay local
+analysis/figures/
+Rplots.pdf
