@@ -4,10 +4,11 @@
 # Big Ten school's game grades within a season, and plots six offensive grades
 # from 2014 to 2026 with the direct revenue-sharing era (2025 onward) shaded.
 #
-# The PFF extract is not part of the repository. Set `pff_dir` to the folder
-# that holds big_ten_team_game_grades.csv. The figure is written to
-# analysis/figures/, which is kept out of version control because it is built
-# from PFF grades.
+# The PFF extract is not part of the repository. By default it is read from
+# data/raw/pff/big_ten_team_game_grades.csv in the package folder, which git
+# ignores; change `pff_dir` if it is elsewhere. The figure is written to
+# analysis/figures/, which is also kept out of version control because it is
+# built from PFF grades.
 #
 # Run from the package root (the folder with DESCRIPTION), for example by
 # opening the project in RStudio and sourcing this file.
@@ -18,13 +19,16 @@ library(ggplot2)
 # clean_pff_offense() are available without installing it
 devtools::load_all(".", quiet = TRUE)
 
-pff_dir <- "/Users/jaxonhill/Downloads/football_recruiting_efficiency/data/raw/pff"
+pff_dir <- file.path("data", "raw", "pff")
 out_dir <- file.path("analysis", "figures")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
 # Team-game grades for Big Ten members only (opponents are dropped by default)
 team_games <- get_pff_season(2014:2026, level = "team", data_dir = pff_dir)
 team_games <- clean_pff_offense(team_games)
+
+# Latest week of the in-progress 2026 season, for the caption
+last_week_2026 <- max(team_games$week[team_games$season == 2026], na.rm = TRUE)
 
 # Offensive grades to show, with panel labels
 grade_labels <- c(
@@ -129,7 +133,7 @@ checkpoint_plot <- ggplot(team_season_long, aes(x = season, y = grade)) +
     y = "PFF grade (0-100)",
     caption = paste0(
       "Shading marks the direct revenue-sharing era. 2026 (hollow points, ",
-      "dashed line) covers games through week 4 only.\n",
+      "dashed line) covers games through week ", last_week_2026, " only.\n",
       "Schools are Big Ten members as of each season (14 through 2023, ",
       "18 from 2024). Source: PFF college team-game grades."
     )
